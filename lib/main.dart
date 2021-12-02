@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/widgets/new_transactions.dart';
 import 'package:flutter_complete_guide/widgets/transaction_list.dart';
@@ -57,20 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void startNewTransaction(BuildContext ctx) {
-    setState(() {
-      showModalBottomSheet(
-          context: ctx,
-          builder: (bctx) {
-            return GestureDetector(
-              onTap: () {},
-              behavior: HitTestBehavior.opaque,
-              child: NewTransaction(
-                _addNewTx,
-              ),
-            );
-          });
-    });
+  void startNewTx(BuildContext ctx) {
+    showModalBottomSheet(
+        context: ctx,
+        builder: (bctx) {
+          return NewTransaction(_addNewTx);
+        });
   }
 
   @override
@@ -80,7 +69,9 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text('Flutter App'),
           actions: [
             IconButton(
-                onPressed: () => startNewTransaction(context),
+                onPressed: () {
+                  startNewTx(context);
+                },
                 icon: Icon(Icons.add))
           ],
         ),
@@ -105,7 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () => startNewTransaction(context),
+          onPressed: () {
+            startNewTx(context);
+          },
         ));
   }
 }
