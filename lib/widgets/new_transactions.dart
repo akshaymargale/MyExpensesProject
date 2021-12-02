@@ -11,7 +11,7 @@ class NewTransaction extends StatelessWidget {
         (int.parse(amountController.text) > 0)) {
       final intitle = titleController.text;
       final inAmount = int.parse(amountController.text);
-      addTx(titleController.text, int.parse(amountController.text));
+      addTx(intitle, inAmount);
     }
   }
 
@@ -32,10 +32,11 @@ class NewTransaction extends StatelessWidget {
               onSubmitted: (_) => submitData(),
             ),
             TextField(
-              keyboardType: TextInputType.number,
+              // keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Amount',
               ),
+              keyboardType: TextInputType.number,
               controller: amountController,
               onSubmitted: (_) => submitData(),
             ),
