@@ -25,11 +25,13 @@ class NewTransaction extends StatelessWidget {
           children: [
             TextField(
               decoration: InputDecoration(labelText: "Title"),
+              onChanged: (_) {},
               controller: titleController,
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Amount'),
               controller: amountController,
+              onChanged: (_) {},
             ),
             RaisedButton(
               onPressed: submitData,
