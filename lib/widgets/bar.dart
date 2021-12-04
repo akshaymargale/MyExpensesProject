@@ -23,20 +23,24 @@ class Bar extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(220, 220, 220, 1),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 1,
-                      ),
+                      color: Theme.of(context).primaryColor,
+                      // border: Border.all(
+                      //   color: Colors.black,
+                      //   width: 1,
+                      // ),
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
                 FractionallySizedBox(
-                  heightFactor: dayExpensePercent,
+                  heightFactor: 1 - dayExpensePercent,
                   child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Theme.of(context).primaryColor),
-                  ),
+                      decoration: BoxDecoration(
+                    // border: Border.all(
+                    //   color: Colors.black,
+                    //   width: 1,
+                    // ),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromRGBO(220, 220, 220, 0.8),
+                  )),
                 )
               ],
             ),

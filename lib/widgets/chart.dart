@@ -33,6 +33,10 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.symmetric(
+        vertical: 15,
+        horizontal: 5,
+      ),
       elevation: 7,
       child: Container(
         padding: EdgeInsets.all(12),
