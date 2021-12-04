@@ -50,7 +50,7 @@ class TransactionList extends StatelessWidget {
                         ),
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          '₹${transactions[index].amount.toStringAsFixed(2)}',
+                          '₹${transactions[index].amount}',
                           style: Theme.of(context).textTheme.subtitle1,
                         ),
                       ),
