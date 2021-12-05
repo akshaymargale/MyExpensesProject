@@ -105,9 +105,16 @@ class _MyHomePageState extends State<MyHomePage> {
           'My Expenses',
         ),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () => _startAddNewTransaction(context),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: CircleAvatar(
+              radius: 22,
+              backgroundColor: Colors.amber,
+              child: IconButton(
+                icon: Icon(Icons.add),
+                onPressed: () => _startAddNewTransaction(context),
+              ),
+            ),
           ),
         ],
       ),
@@ -123,7 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).primaryColor,
+        ),
         onPressed: () => _startAddNewTransaction(context),
       ),
     );
